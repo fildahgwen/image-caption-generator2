@@ -88,7 +88,8 @@ def main():
     if choice == "Upload":
         st.subheader("Upload Your Video")
 
-        video_file_path = st.file_uploader("accepting mp4,avi", type=["mp4", "avi"],server.maxUploadSize = 2)
+        video_file_path = st.file_uploader("accepting mp4,avi", type=["mp4", "avi"])
+        st.set_option('server.maxUploadSize', 2 * 1024 * 1024)  # Set maximum upload size to 2 megabytes
 
         if video_file_path is not None:
             path = video_file_path.name
