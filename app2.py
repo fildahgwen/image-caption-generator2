@@ -10,6 +10,7 @@ from streamlit_option_menu import option_menu
 #Loading the VGG16 model
 model= load_model('mymodel.h5',compile=(False))
 st.markdown('<style>body{background-color:Blue;}</style>',unsafe_allow_html=True)
+streamlit run app2.py --server.maxUploadSize 2
 
 
 
@@ -90,7 +91,7 @@ def main():
 
         video_file_path = st.file_uploader("accepting mp4,avi", type=["mp4", "avi"])
         #st.set_option('server.maxUploadSize', 2 * 1024 * 1024)  
-        streamlit run script.py --server.maxUploadSize==2
+        #streamlit run script.py --server.maxUploadSize==2
         # Set maximum upload size to 2 megabytes
 
         if video_file_path is not None:
