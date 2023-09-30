@@ -35,7 +35,7 @@ st.markdown(
 )
 
 # Upload image
-uploaded_image = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
+uploaded_image = st.file_uploader("accepting 2Mb mp4,avi", type=["mp4", "avi"]
 
 # Process uploaded image
 if uploaded_image is not None:
