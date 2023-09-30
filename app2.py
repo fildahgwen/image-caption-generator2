@@ -9,6 +9,13 @@ from streamlit_option_menu import option_menu
 
 #Loading the VGG16 model
 model= load_model('mymodel.h5',compile=(False))
+# Load MobileNetV2 model
+mobilenet_model = MobileNetV2(weights="imagenet")
+mobilenet_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
+
+# Load the tokenizer
+with open('tokenizer.pkl', 'rb') as tokenizer_file:
+    tokenizer = pickle.load(tokenizer_file)
 
 
 
