@@ -109,7 +109,7 @@ def main():
         img = preprocess_input(frame)
 
             # Pass the image through the ResNet-50 model
-        img_features = resnet_model.predict(np.expand_dims(img, axis=0))
+        img_features = mobilenet_model.predict(np.expand_dims(img, axis=0))
 
             # Get the predicted caption
         caption = predict_caption(img_features)
