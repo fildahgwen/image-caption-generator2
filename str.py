@@ -88,7 +88,8 @@ st.markdown(
                             break
         
                         # Perform object detection
-                        object_detection(key,frame, model)
+                        # object_detection(key,frame, model)
+                        predict_caption(model, image_features, tokenizer, max_caption_length)
                         
                     cap.release()
                     output.release()
