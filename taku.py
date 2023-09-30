@@ -39,8 +39,8 @@ def predict_caption(photo):
        # word_to_idx = pickle.load(f)
       
     # Load the tokenizer
-    with open('tokenizer.pkl', 'rb') as tokenizer_file:
-        tokenizer = pickle.load(tokenizer_file)
+    with open('tokenizer.pkl', 'rb') as f:
+        tokenizer = pickle.load(f)
     # Load idx_to_word dictionary from file
     #with open("saved_ixtoword.pkl", "rb") as f:
         #idx_to_word = pickle.load(f)
@@ -50,12 +50,12 @@ def predict_caption(photo):
 
     for _ in range(max_len):
         sequence = tokenizer.texts_to_sequences([caption])[0]
-        #sequence = [word_to_idx[w] for w in in_text.split() if w in word_to_idx]
-        #sequence = tokenizer.texts_to_sequences([caption])[0]
-        sequence = pad_sequences([sequence], maxlen=max_len, padding='post')
+        sequence = [word_to_idx[w] for w in in_text.split() if w in word_to_idx]
+        sequence = tokenizer.texts_to_sequences([caption])[0]
+        sequence = pad_sequences([sequence], max_len, padding='post')
 
-        #ypred = model.predict([photo, sequence])
-        #yhat = model.predict([image_features, sequence], verbose=0)
+        ypred = model.predict([photo, sequence])
+        yhat = model.predict([image_features, sequence], verbose=0)
         ypred = model.predict([image_features, sequence], verbose=0)
         ypred = ypred.argmax()
         if ypred not in idx_to_word:
