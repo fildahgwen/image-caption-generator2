@@ -9,8 +9,7 @@ from streamlit_option_menu import option_menu
 
 #Loading the VGG16 model
 model= load_model('mymodel.h5',compile=(False))
-st.markdown('<style>body{background-color:Blue;}</style>',unsafe_allow_html=True)
-streamlit run app2.py --server.maxUploadSize 2
+
 
 
 
