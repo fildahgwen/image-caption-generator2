@@ -71,7 +71,7 @@ def image_captioning(image):
 
 # Streamlit app
 st.title('Image Captioning on Video Clips')
-uploaded_file = st.file_uploader('Choose a video file', type=['mp4', 'avi', 'mov', 'mkv'], max_upload_size=2*1024*1024)
+uploaded_file = st.file_uploader('Choose a video file', type=['mp4', 'avi', 'mov', 'mkv'])
 
 if uploaded_file is not None:
     video = cv2.VideoCapture(uploaded_file)
