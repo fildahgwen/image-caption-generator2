@@ -67,7 +67,7 @@ def image_captioning(image):
 
         # Remove startseq and endseq
         generated_caption = generated_caption.replace("startseq", "").replace("endseq", "")
-    pass
+        pass
 
 # Streamlit app
 st.title('Image Captioning on Video Clips')
