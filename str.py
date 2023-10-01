@@ -64,28 +64,11 @@ st.markdown(
                         break
     
                     
-                    predict(frame, model)
+                    predict_caption(model, image_features, tokenizer, max_caption_length)
     
                     # Display the resulting frame
                     
-                cap.release()
-                output.release()
-                cv2.destroyAllWindows()
-                
-            key = st.text_input('Search key')
-            key = key.lower()
-            
-            if key is not None:
-            
-                if st.button("Search for an object"):
-                    
-                    
-                    # Start the video prediction loop
-                    while cap.isOpened():
-                        ret, frame = cap.read()
-        
-                        if not ret:
-                            break
+
         
                         # Perform object detection
                         # object_detection(key,frame, model)
