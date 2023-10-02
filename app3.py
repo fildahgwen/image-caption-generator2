@@ -109,10 +109,10 @@ def predict_caption(model, image_features, tokenizer, max_caption_length):
         return caption       
 
         # Generate caption
-        generated_caption = predict_caption(model, image_features, tokenizer, max_caption_length)
+generated_caption = predict_caption(model, image_features, tokenizer, max_caption_length)
 
         # Remove startseq and endseq
-        generated_caption = generated_caption.replace("startseq", "").replace("endseq", "")
+generated_caption = generated_caption.replace("startseq", "").replace("endseq", "")
 
     # Display the generated caption with custom styling
 st.markdown(
