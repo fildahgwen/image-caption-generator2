@@ -24,19 +24,26 @@ from PIL import Image
 
 
 # Load the model and tokenizer
-model = load_model('model.h5')
-tokenizer = Tokenizer.from_json('tokenizer.json')
+#model = load_model('model.h5')
+#tokenizer = Tokenizer.from_json('tokenizer.json')
+
+# Load your trained model
+model = tf.keras.models.load_model('mymodel.h5')
+
+# Load the tokenizer
+with open('tokenizer.pkl', 'rb') as tokenizer_file:
+    tokenizer = pickle.load(tokenizer_file)
 
 # Load the MobileNet model for feature extraction
 mobile_net_model = load_model('mobilenet_model.h5')
 
 
-# Load the model and tokenizer
-model = load_model('model.h5')
-tokenizer = Tokenizer.from_json('tokenizer.json')
 
 # Load the MobileNet model for feature extraction
-mobile_net_model = load_model('mobilenet_model.h5')
+#mobile_net_model = load_model('mobilenet_model.h5')
+# Load MobileNetV2 model
+mobilenet_net_model = MobileNetV2(weights="imagenet")
+mobilenet_net_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
 
 # Function to generate captions from image
 def generate_caption(image):
