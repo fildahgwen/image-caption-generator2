@@ -94,19 +94,19 @@ def display_video_with_captions(video_path, captions):
             break
     video.release()
     cv2.destroyAllWindows()
-        # Generate caption using the model
-        def predict_caption(model, image_features, tokenizer, max_caption_length):
-            caption = "startseq"
-            for _ in range(max_caption_length):
-                sequence = tokenizer.texts_to_sequences([caption])[0]
-                sequence = pad_sequences([sequence], maxlen=max_caption_length)
-                yhat = model.predict([image_features, sequence], verbose=0)
-                predicted_index = np.argmax(yhat)
-                predicted_word = get_word_from_index(predicted_index, tokenizer)
-                caption += " " + predicted_word
-                if predicted_word is None or predicted_word == "endseq":
-                    break
-            return caption
+ # Generate caption using the model
+def predict_caption(model, image_features, tokenizer, max_caption_length):
+        caption = "startseq"
+        for _ in range(max_caption_length):
+            sequence = tokenizer.texts_to_sequences([caption])[0]
+            sequence = pad_sequences([sequence], maxlen=max_caption_length)
+            yhat = model.predict([image_features, sequence], verbose=0)
+            predicted_index = np.argmax(yhat)
+            predicted_word = get_word_from_index(predicted_index, tokenizer)
+            caption += " " + predicted_word
+            if predicted_word is None or predicted_word == "endseq":
+                break
+        return caption       
 
         # Generate caption
         generated_caption = predict_caption(model, image_features, tokenizer, max_caption_length)
