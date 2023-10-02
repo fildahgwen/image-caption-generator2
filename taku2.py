@@ -55,7 +55,8 @@ def upload_file(file):
     if file and allowed_file(file.filename):
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             temp_file.write(file.read())
-            return video_path = temp_file.name
+            video_path = temp_file.name
+            return temp_file.name
     else:
         return None
 
