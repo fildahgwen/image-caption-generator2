@@ -68,7 +68,7 @@ for i, frame in enumerate(frames):
     frame = cv2.resize(frame, (224, 224))
 
             # Preprocess the image
-     uploaded_image= preprocess_input(frame)
+    uploaded_image= preprocess_input(frame)
 
 #uploaded_image = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 
