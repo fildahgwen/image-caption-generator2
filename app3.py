@@ -33,7 +33,7 @@ with open('tokenizer.pkl', 'rb') as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
 
 # Load the MobileNet model for feature extraction
-mobile_net_model = load_model('mobilenet_model.h5')
+#mobile_net_model = load_model('mobilenet_model.h5')
 
 
 
