@@ -44,6 +44,7 @@ with open('tokenizer.pkl', 'rb') as tokenizer_file:
 mobile_net_model = MobileNetV2(weights="imagenet")
 mobile_net_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
 
+
 # Function to generate captions from image
 def generate_caption(image):
     # Preprocess the image
