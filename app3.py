@@ -40,8 +40,8 @@ with open('tokenizer.pkl', 'rb') as tokenizer_file:
 # Load the MobileNet model for feature extraction
 #mobile_net_model = load_model('mobilenet_model.h5')
 # Load MobileNetV2 model
-mobilenet_net_model = MobileNetV2(weights="imagenet")
-mobilenet_net_model = Model(inputs=mobile_net_model.inputs, outputs=mobile_net_model.layers[-2].output)
+mobile_net_model = MobileNetV2(weights="imagenet")
+mobile_net_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
 
 # Function to generate captions from image
 def generate_caption(image):
