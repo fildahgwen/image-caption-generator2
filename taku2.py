@@ -63,7 +63,7 @@ def upload_file(file):
         # Convert video frames to images
 
 
-      
+video_path = temp_file.name      
 frames = []
 vidcap = cv2.VideoCapture(video_path)
 success, image = vidcap.read()
