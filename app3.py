@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 from keras.models import load_model
 import sys
-from streamlit_option_menu import option_menupython
+from streamlit_option_menu import option_menu
 import streamlit as st
 import cv2
 import numpy as np
