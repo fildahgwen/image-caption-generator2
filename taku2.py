@@ -48,7 +48,8 @@ video_file = st.file_uploader("Upload Video ", type=["mp4"])
     
 with tempfile.NamedTemporaryFile(delete=False) as temp_file:
         temp_file.write(video_file.read())
-        video_path = temp_file.name if temp_file else None
+        video_path = temp_file.name 
+        video_path = lastvideo.video_path if lastvideo else None
 
         # Convert video frames to images
 
